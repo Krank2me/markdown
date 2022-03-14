@@ -1,0 +1,20 @@
+<mat-card>
+  <div class="title-button">
+    <mat-card-title>Notas</mat-card-title>
+    <button mat-fab color="primary" (click)="show()"><i class="fa" [ngClass]="icon"></i></button>
+  </div>
+  <ng-container  *ngIf="isDisplay">
+    <mat-card-content>
+      <app-markdown-editor (addNote)="addNewNote($event)"></app-markdown-editor>
+    </mat-card-content>
+
+    <div class="container" >
+      <mat-card class="card" *ngFor="let note of notes">
+        <mat-card-title>{{note.createAt | date}}</mat-card-title>
+        <mat-card-content>
+          <div [innerHtml]="note.note"></div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </ng-container>
+</mat-card>

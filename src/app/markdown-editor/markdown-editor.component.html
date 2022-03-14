@@ -1,0 +1,74 @@
+<div class="markdown-global-component">
+  <div class="editor-box" *ngIf="!toogleEditPreview">
+    <markdown-toolbar for="textarea_id">
+      <md-bold>
+        <button class="btn" title="Bold" aria-label="Bold">
+          <i class="fa fa-bold"></i>
+        </button>
+      </md-bold>
+
+      <md-italic>
+        <button class="btn" title="Bold" aria-label="Bold">
+          <i class="fa fa-italic"></i>
+        </button>
+      </md-italic>
+
+      <md-strikethrough>
+        <button class="btn" title="Bold" aria-label="Bold">
+          <i class="fa fa-strikethrough"></i>
+        </button>
+      </md-strikethrough>
+
+      <md-link>
+        <button class="btn" title="Bold" aria-label="Bold">
+          <i class="fa fa-link"></i>
+        </button>
+      </md-link>
+
+      <md-unordered-list title="unordered-list" aria-label="Bold">
+        <button class="btn">
+          <i class="fa fa-list-ul"></i>
+        </button>
+      </md-unordered-list>
+
+      <md-ordered-list>
+        <button class="btn" title="ordered-list" aria-label="Bold">
+          <i class="fa fa-list-ol"></i>
+        </button>
+      </md-ordered-list>
+
+
+    </markdown-toolbar>
+
+
+
+    <form [formGroup]="editorForm">
+      <div class="form-group">
+        <textarea
+          id="textarea_id"
+          class="text-editor"
+          formControlName="description"
+        >
+        </textarea>
+      </div>
+    </form>
+  </div>
+
+  <div class="preview-box" *ngIf="toogleEditPreview">
+    <div [innerHtml]="previewContentHTML"></div>
+  </div>
+
+  <div class="container-bnts">
+    <button mat-raised-button color="primary" (click)="preview()">
+      {{ toogleEditPreview ? "Edit" : "Preview" }}
+    </button>
+    <button
+      mat-raised-button
+      color="warn"
+      (click)="saveNote()"
+      [disabled]="!toogleEditPreview"
+    >
+      Save
+    </button>
+  </div>
+</div>

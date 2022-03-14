@@ -1,0 +1,131 @@
+$hover-color: #06c;
+$border-color: #d9d9d9;
+$blue-border: #4c9aff;
+$padding: 15px;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+markdown-toolbar {
+  padding-left: $padding;
+  border-bottom: 2px solid $border-color;
+  width: 392px;
+
+  .btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #222;
+    margin-right: -50px;
+
+    i {
+      display: flex;
+    }
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}
+
+.markdown-global-component {
+  margin-top: 100px;
+  margin-left: 20px;
+  display: flex;
+  flex-flow: column;
+  width: 400px;
+  button {
+    width: 100px;
+    height: 40px;
+  }
+}
+
+.editor-box {
+  border: 1px solid $border-color;
+  box-shadow: 0 0 0 1px $border-color;
+  border-radius: 3px;
+  outline: none;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 300px;
+
+  .text-editor {
+    padding: $padding;
+    resize: none;
+    border-color: transparent;
+    width: 92%;
+    height: 227px;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &:focus {
+      outline: none;
+      border: transparent;
+    }
+  }
+
+  &.focus {
+    border: 1px solid $hover-color;
+    box-shadow: 0 0 0 1px $hover-color;
+  }
+}
+
+.preview-box {
+  border: 1px solid $border-color;
+  box-shadow: 0 0 0 1px $border-color;
+  border-radius: 3px;
+  outline: none;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 301px;
+
+  div {
+    padding-left: $padding;
+    padding-right: $padding;
+    resize: none;
+    border-color: transparent;
+    width: 89%;
+    height: 100%;
+    overflow: scroll;
+    word-wrap: break-word;
+    justify-content: baseline;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &:focus {
+      outline: none;
+      border: transparent;
+    }
+
+    &.focus {
+      border: 1px solid $hover-color;
+      box-shadow: 0 0 0 1px $hover-color;
+    }
+
+    ul {
+      li {
+        padding: 0px;
+        margin: 0px;
+      }
+    }
+  }
+}
+
+.container-bnts {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 402px;
+  margin-top: 20px;
+}
