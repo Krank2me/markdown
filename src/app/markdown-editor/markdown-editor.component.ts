@@ -16,6 +16,7 @@ export class MarkdownEditorComponent implements OnInit {
   contentNote: string = '';
   notes: Note[] = [];
   noteObj!: Note ;
+  prueba = '';
 
   @Output() addNote = new EventEmitter<Note[]>()
 
